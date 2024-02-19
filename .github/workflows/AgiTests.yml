@@ -1,4 +1,4 @@
-name: AgoBlog Testes
+name: AgiBlog Testes
 on: [push, pull_request]
 jobs:
   test:
