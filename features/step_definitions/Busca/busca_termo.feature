@@ -2,7 +2,7 @@
       #encoding: UTF-8
       #author: raoni.rodriguess@gmail.com
 
-      @buscas_termos
+      @buscas_termos @regression
       Funcionalidade: Pesquisa no Blog Agi
 
       Esquema do Cenário: Realizar Pesquisa

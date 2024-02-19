@@ -1,0 +1,50 @@
+name: CI Ruby
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+
+    - name: Configurar Ruby
+      uses: actions/setup-ruby@v2
+      with:
+        ruby-version: 3.2 # Especifique a versão do Ruby que você deseja usar
+
+    - name: Instalar dependências
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Executar testes
+      run: |
+        bundle exec rspec # Substitua isso com o comando de teste real
+        bundle exec cucumber # Adicione o comando cucumber aqui
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+
+    - name: Configurar Ruby
+      uses: actions/setup-ruby@v2
+      with:
+        ruby-version: 3.2 # Especifique a versão do Ruby que você deseja usar
+
+    - name: Instalar dependências
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Fazer deploy para produção
+      run: |
+        cucumber -t @regression
