@@ -43,7 +43,7 @@ jobs:
     - name: Instalar dependências
       run: |
         gem install bundler
-        bundle install
+        bundle exec cucumber -t @regression
 
     - name: Fazer deploy para produção
       run: |
